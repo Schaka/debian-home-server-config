@@ -177,7 +177,7 @@ config = {
         "qbit_sample" : {
             "torrent_client" : "qbit",
             "enable_search" : True,
-            "qbit_url" : "http://GluetunVPN", # this is my docker container on the same network, which qbit sits behind
+            "qbit_url" : "http://gluetun", # this is my docker container on the same network, which qbit sits behind, use qbittorrent if you're not using a VPN
             "qbit_port" : "8082",
             "qbit_user" : "admin",
             "qbit_pass" : "adminadmin",
