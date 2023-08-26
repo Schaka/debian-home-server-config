@@ -1,0 +1,16 @@
+---
+version: "2.1"
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    network_mode: "container:gluetun"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - WEBUI_PORT=8082
+    volumes:
+      - /appdata/qbittorrent:/config
+      - /share_media/:/data
+    restart: unless-stopped

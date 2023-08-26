@@ -1,0 +1,25 @@
+---
+version: "2.1"
+services:
+  prowlarr:
+    image: crossseed/cross-seed:latest
+    container_name: cross-seed
+    environment:
+      - TZ=Europe/Berlin
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /appdata/cross-seed:/config
+      - /appdata/qbittorrent/qBittorrent/BT_backup/:/torrents
+      - /share_media/torrents/cross-seed/:/cross-seeds
+    command: daemon
+    ports:
+     - 2467:2468 # fake port, we don't want to expose this but still need to connect to the HTPC network
+    networks:
+      htpc:
+        ipv4_address: 172.18.0.115
+    restart: unless-stopped
+
+networks:
+  htpc:
+    external: true

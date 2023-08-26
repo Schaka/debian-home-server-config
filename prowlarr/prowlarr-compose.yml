@@ -1,0 +1,22 @@
+---
+#https://hub.docker.com/r/linuxserver/prowlarr
+version: "2.1"
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    volumes:
+      - /appdata/prowlarr:/config
+    ports:
+      - 9696:9696
+    networks:
+      - htpc  
+    restart: unless-stopped  
+
+networks:
+  htpc:
+    external: true 

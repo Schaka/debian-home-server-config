@@ -1,0 +1,23 @@
+---
+# https://hub.docker.com/r/fallenbagel/jellyseerr
+version: '3'
+services:
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - LOG_LEVEL=debug
+      - TZ=Europe/Berlin
+    ports:
+      - 5055:5055
+    volumes:
+      - /appdata/jellyseerr:/app/config
+    networks:
+      - htpc  
+    restart: unless-stopped
+
+networks:
+  htpc:
+    external: true
