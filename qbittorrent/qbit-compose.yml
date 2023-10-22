@@ -2,7 +2,8 @@
 version: "2.1"
 services:
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
+    # latest version seems to memory leak and use tons of RAM with no limits in sight
+    image: lscr.io/linuxserver/qbittorrent:14.3.9
     container_name: qbittorrent
     environment:
       - PUID=1000
