@@ -26,7 +26,7 @@ sonarr:
         upgrade:
           allowed: true
           until_quality: WEB 1080p
-          until_score: 99999
+          until_score: 3500
         min_format_score: 0
         quality_sort: top
         qualities:
@@ -67,7 +67,7 @@ sonarr:
         upgrade:
           allowed: true
           until_quality: Combined 1080p
-          until_score: 99999
+          until_score: 3500
         min_format_score: 0
         quality_sort: top
         qualities:
@@ -76,7 +76,7 @@ sonarr:
               - WEBDL-1080p
               - HDTV-1080p
               - WEBRip-1080p
-              - Bluray-1080p    
+              - Bluray-1080p
 
     custom_formats:
       - trash_ids:
@@ -113,7 +113,6 @@ sonarr:
         - 3fbafa924f361e66fbc6187af82dfa85 # 5.1 Surround
         - 9fb6d778592c293467437593ef394bf1 # 6.1 Surround
         - 204c8c3e7315bb0ea81332774fa888d6 # 7.1 Surround
-        - a377864de6228b252d6e28962673cedd # 9.1 Surround
 
         # HDR Formats
         - 6d0d8de7b57e35518ac0308b0ddf404e # DV
@@ -202,15 +201,47 @@ sonarr:
         - fbcb31d8dabd2a319072b84fc0b7249c # Extras
         # - 47435ece6b99a0b477caf360e79ba0bb # x265 (HD)
 
-        quality_profiles:
+        assign_scores_to:
           - name: Non-Anime
+
+      # Audio Channels for quality
+      - trash_ids:
+          - 834e534f103938853ffced4203b53e72 # 2.0 Stereo
+        assign_scores_to:
+          - name: Non-Anime
+            score: 10
+      - trash_ids:
+          - 42cba7e38c7947a6d1d0a62580ee6d62 # 3.0 Sound
+        assign_scores_to:
+          - name: Non-Anime
+            score: 15
+      - trash_ids:
+          - 1895195e84767de180653914ce207245 # 4.0 Sound
+        assign_scores_to:
+          - name: Non-Anime
+            score: 20
+      - trash_ids:
+          - 3fbafa924f361e66fbc6187af82dfa85 # 5.1 Surround
+        assign_scores_to:
+          - name: Non-Anime
+            score: 265
+      - trash_ids:
+          - 9fb6d778592c293467437593ef394bf1 # 6.1 Surround
+        assign_scores_to:
+          - name: Non-Anime
+            score: 270
+      - trash_ids:
+          - 204c8c3e7315bb0ea81332774fa888d6 # 7.1 Surround
+        assign_scores_to:
+          - name: Non-Anime
+            score: 300
 
 # Configuration specific to Radarr.
 radarr:
   movies:
     # Set the URL/API Key to your actual instance
     base_url: http://radarr:7878
-    api_key: 538d7d4d1add4eee90db396
+    api_key: 538d7d4d1add4eee90db3967f4
 
     # Which quality definition in the guide to sync to Radarr. Only choice right now is 'movie'
     quality_definition:
@@ -225,7 +256,7 @@ radarr:
         upgrade:
           allowed: true
           until_quality: Bluray-2160p
-          until_score: 99999
+          until_score: 3500
         min_format_score: 0
         quality_sort: top
         qualities:
@@ -315,7 +346,6 @@ radarr:
           - 77ff61788dfe1097194fd8743d7b4524 # 5.1 Surround
           - 6fd7b090c3f7317502ab3b63cc7f51e3 # 6.1 Surround
           - e77382bcfeba57cb83744c9c5449b401 # 7.1 Surround
-          - f2aacebe2c932337fe352fa6e42c1611 # 9.1 Surround
 
           # HDR Formats
           - 58d6a88f13e2db7f5059c41047876f00 # DV
@@ -409,8 +439,42 @@ radarr:
           - bfd8eb01832d646a0a89c4deb46f8564 # Upscaled
           - dc98083864ea246d05a42df0d05f81cc # x265 (HD)
 
-        quality_profiles:
+        assign_scores_to:
           - name: Non-Anime
+
+
+      # Audio Channels for quality
+      - trash_ids:
+          - 89dac1be53d5268a7e10a19d3c896826 # 2.0 Stereo
+        assign_scores_to:
+          - name: Non-Anime
+            score: 10
+      - trash_ids:
+          - 205125755c411c3b8622ca3175d27b37 # 3.0 Sound
+        assign_scores_to:
+          - name: Non-Anime
+            score: 15
+      - trash_ids:
+          - 373b58bd188fc00c817bd8c7470ea285 # 4.0 Sound
+        assign_scores_to:
+          - name: Non-Anime
+            score: 20
+      - trash_ids:
+          - 77ff61788dfe1097194fd8743d7b4524 # 5.1 Surround
+        assign_scores_to:
+          - name: Non-Anime
+            score: 265
+      - trash_ids:
+          - 6fd7b090c3f7317502ab3b63cc7f51e3 # 6.1 Surround
+        assign_scores_to:
+          - name: Non-Anime
+            score: 270
+      - trash_ids:
+          - e77382bcfeba57cb83744c9c5449b401 # 7.1 Surround
+        assign_scores_to:
+          - name: Non-Anime
+            score: 300
+
 
       ### Anime ###
       - trash_ids:
@@ -442,5 +506,5 @@ radarr:
           - a5d148168c4506b55cf53984107c396e # 10bit
           - 064af5f084a0a24458cc8ecd3220f93f # Uncensored
 
-        quality_profiles:
+        assign_scores_to:
           - name: Anime
