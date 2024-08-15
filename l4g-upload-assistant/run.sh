@@ -12,8 +12,7 @@ docker run \
   -v '/appdata/qbittorrent-private/qBittorrent/BT_backup/':'/BT_backup':'rw' \
   -v '/appdata/l4g-upload-assistant/tmp':'/Upload-Assistant/tmp':'rw' 'ghcr.io/l4gsp1ke/upload-assistant:master' \
   "/downloads/torrents/$path" \
-  --manual \
   --unattended \
-  --trackers=$tracker
+  --trackers $tracker
 
 docker logs -f l4g-upload-assistant
