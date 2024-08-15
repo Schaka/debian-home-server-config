@@ -183,7 +183,7 @@ config = {
             "qbit_pass" : "adminadmin",
             "torrent_storage_dir" : "/BT_backup", # this is mapped in the command above in line 6
             # "qbit_tag" : "tag",
-            # "qbit_cat" : "category"
+            # "qbit_cat" : "category",
             
             # Content Layout for adding .torrents: "Original"(recommended)/"Subfolder"/"NoSubfolder"
             "content_layout" : "Original",
@@ -191,7 +191,7 @@ config = {
             # Enable automatic torrent management if listed path(s) are present in the path
                 # If using remote path mapping, use remote path
                 # For using multiple paths, use a list ["path1", "path2"] 
-            # "automatic_management_paths" : ""
+            # "automatic_management_paths" : "",
 
 
 
