@@ -1,7 +1,7 @@
 ---
 version: "2.1"
 services:
-  prowlarr:
+  cross-seed:
     image: crossseed/cross-seed:latest
     container_name: cross-seed
     environment:
